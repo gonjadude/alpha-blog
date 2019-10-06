@@ -3,18 +3,14 @@ class ArticlesController < ApplicationController
 	def index
 
 		@list_articles = Article.all
-
-
 	end
 
 	def new
 		@article = Article.new
 	end
 
-
 	def edit
 		@article = Article.find(params[:id])
-
  	end
 
 	
@@ -28,13 +24,18 @@ class ArticlesController < ApplicationController
 		else
 			render 'new'
 		end		
-		#@article.save
-		
+		#@article.save	
 	end
 
 	def show
 		@article = Article.find(params[:id])
+	end
 
+	def destroy
+		@article = Article.find(params[:id])
+		@article.destroy
+		flash[:notice] = "Article was successfully deleted"
+		redirect_to articles_path
 	end
 
 	def update
@@ -43,13 +44,10 @@ class ArticlesController < ApplicationController
 	if @article.update(article_params)
 			flash[:notice] = "Article was successfully updated"
 			redirect_to article_path(@article)
-		else
+	else
 			render 'edit'
-		end
-
 	end
-
-
+	end
 
  	private
  	def article_params
