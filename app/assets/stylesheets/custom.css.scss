@@ -1,7 +1,9 @@
-$navbar-default-bg: #08088A;
-
 @import "bootstrap-sprockets";
-@import "bootstrap"; 
+@import "bootstrap/scss/bootstrap";
+
+.navbar-custom {
+  background-color: #21107E;
+}
 
 #logo {
 	float: left;
@@ -9,5 +11,5 @@ $navbar-default-bg: #08088A;
 	color: #fff;
 	test-transform: uppercase;
 	letter-spacing: -1px;
-	font-weight: bold;
+	font-weight: bold
 }
