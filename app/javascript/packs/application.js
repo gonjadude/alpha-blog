@@ -3,8 +3,9 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-import 'bootstrap'
-import './src/application.scss'
+import "bootstrap";
+import "bootstrap/scss/bootstrap";
+
 
 require("@rails/ujs").start()
 require("turbolinks").start()
@@ -28,5 +29,4 @@ require("bootstrap/dist/js/bootstrap")
 //= require turbolinks
 //= require_tree
 //= require popper
-
-
+import "controllers"
